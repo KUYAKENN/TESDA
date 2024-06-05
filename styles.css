@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.logo {
+    width: 160px;
+    height: auto;
+}
+.background{
+    background-color: #0000ff;
+}
+
+#snackbar, #login-snackbar, #signup-snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #323232;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#snackbar.show, #login-snackbar.show, #signup-snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
